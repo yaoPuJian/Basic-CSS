@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="login">
+    <form action="/abc" method="get">
+      <div class="username">
+        <label for="username">用户名</label>
+        <input id="username" type="text" name="username">
+      </div>
+      <div class="password">
+        <label for="password">密码</label>
+        <input id="password" type="password" name="password" placeholder="请输入密码">
+      </div>
+      <div class="submit">
+        <button>提交</button>
+      </div>
+      <div class="hobby">
+        <label for="">爱好</label>
+        <input type="checkbox" name="hobby" value="read">读书
+        <input type="checkbox" name="hobby" value="song">听歌
+        <input type="checkbox" name="hobby" value="study">学习
+      </div>
+      <div class="sex">
+        <label for="">性别</label>
+        <input type="radio" name="sex" value="male">男
+        <input type="radio" name="sex" value="femal">女
+      </div>
+      <div class="file">
+        <input name="file" type="file" accept="image/png">
+      </div>
+      <div class="select">
+        <select name="city" id="">
+          <option value="beijing">北京</option>
+          <option value="shanghai">上海</option>
+          <option value="hangzhou" selected>杭州</option>
+        </select>
+      </div>
+      <div class="textarea">
+        <textarea name="article" id="" cols="30" rows="10">
+          ddd
+        </textarea>
+      </div>
+      <input type="hidden" name="abcd" value="123456">
+      <input type="button" value="Button">
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+  </div>
+</body>
+</html>
