@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by anonymous (http://jsbin.com/minewanufu/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.line {
+  border: 1px solid #ccc;
+  margin-bottom: 40px;
+}
+
+ul::after {
+  display: block;
+  content: '';
+  clear: both;
+  
+}
+
+.layout {
+  width: 490px;
+  margin: 0 auto;
+}
+
+li {
+  background: #fff;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  float: left;
+}
+</style>
+</head>
+<body>
+  <div class="layout">
+    <div class="header">
+      <h1>风景列表</h1>
+    </div>
+    <div class="line"></div>
+    <div class="content">
+      <ul>
+        <li>风景如画</li>
+        <li>风景如画</li>
+        <li>风景如画</li>
+        <li>风景如画</li>
+        <li>风景如画</li>
+        <li>风景如画</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
