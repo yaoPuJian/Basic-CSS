@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <style>
+  	* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.box {
+  background: grey;
+  opacity: 0.6;
+  height: 100px;
+  position: relative;
+}
+
+.buttom::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.buttom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.buttom>li {
+  float: left;
+  display: block;
+  margin: 2px;
+  background: red;
+  color: #fff;
+  border-radius: 3px;
+}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <ul class="buttom">
+      <li>按钮1</li>
+      <li>按钮2</li>
+      <li>按钮3</li>
+    </ul>
+  </div>
+</body>
+</html>

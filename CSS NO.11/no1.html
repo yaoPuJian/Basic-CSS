@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by anonymous (http://jsbin.com/kofonudotu/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<style id="jsbin-css">
+.left {
+  width: 200px;
+  height: 500px;
+  background: red;
+  float: left;
+}
+
+.right {
+  height: 600px;
+  background: blue;
+  margin-left: 210px;
+}
+
+.content::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+</style>
+</head>
+<body>
+  <div class="left"></div>
+  <div class="right"></div>
+</body>
+</html>

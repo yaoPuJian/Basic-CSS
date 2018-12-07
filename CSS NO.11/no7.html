@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  	* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.box::before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+
+img {
+  vertical-align: middle;
+  
+}
+  </style>
+</head>
+<body>
+  <div class="box"> 
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="">
+  </div>
+</body>
+</html>
