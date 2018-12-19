@@ -204,7 +204,7 @@ section .itinerary .end {
 	margin-top: 120px;
 	text-align: center;
 }
-/*.icon {
+.icon {
    width: 1em; height: 1em;
    vertical-align: -0.15em;
    fill: currentColor;
@@ -235,7 +235,7 @@ section .itinerary .end {
 .icon-icontencent {
 	font-size: 100px;
 	padding: 10px;
-}*/
+}
 section .food > li {
 	width: 33.33%;
 	float: left;
