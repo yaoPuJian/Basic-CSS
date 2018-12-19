@@ -222,12 +222,15 @@ section .itinerary .end {
 }
 .icon-twitter2:hover {
 	background: #f7ba3e;
+	cursor: pointer;
 }
 .icon-facebook1:hover {
 	background: #f7ba3e;
+	cursor: pointer;
 }
 .icon-instagram:hover {
 	background: #f7ba3e;
+	cursor: pointer;
 }
 .icon-baidu,
 .icon-alibaba,
