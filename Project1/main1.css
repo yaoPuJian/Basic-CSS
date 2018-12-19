@@ -211,7 +211,7 @@ section .itinerary .end {
    overflow: hidden;
    font-size: 128px;
 }
-/*.icon-twitter2,
+.icon-twitter2,
 .icon-facebook1,
 .icon-instagram {
 	font-size: 40px;
@@ -235,7 +235,7 @@ section .itinerary .end {
 .icon-icontencent {
 	font-size: 100px;
 	padding: 10px;
-}*/
+}
 section .food > li {
 	width: 33.33%;
 	float: left;
