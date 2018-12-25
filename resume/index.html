@@ -4,36 +4,50 @@
 	<meta charset="UTF-8">
 	<title>My Resuem</title>
 	<link rel="stylesheet" href="./resume.css">
+	<script src="http://at.alicdn.com/t/font_981187_eg70ikkyk6p.js"></script>
+	<style type="text/css">
+    .icon {
+       width: 30px; height: 30px;
+       vertical-align: -0.15em;
+       fill: white;
+       overflow: hidden;
+    }
+</style>
 </head>
 <body>
-	<div class="topNavBar clearfix">
-		<a href="#" class="logo">
+	<div class="topNavBar">
+		<div class="topNavBar-inner clearfix">
+			<a href="#" class="logo">
 			<span class="rs">RS</span><span class="card">card</span>
-		</a>
-		<nav>
-			<ul class="clearfix">
-				<li><a href="#">ABOUT</a></li>
-				<li><a href="#">SKILL</a></li>
-				<li><a href="#">PORTFOLIO</a></li>
-				<li><a href="#">EXPERIENCE</a></li>
-				<li><a href="#">PRICING</a></li>
-				<li><a href="#">BLOG</a></li>
-				<li><a href="#">CALENDAR</a></li>
-				<li><a href="#">CONTACT</a></li>
-				<li><a href="#">OTHER</a></li>
-			</ul>
-		</nav>
+			</a>
+			<nav>
+				<ul class="clearfix">
+					<li><a href="#">ABOUT</a></li>
+					<li><a href="#">SKILL</a></li>
+					<li><a href="#">PORTFOLIO</a></li>
+					<li><a href="#">EXPERIENCE</a></li>
+					<li><a href="#">PRICING</a></li>
+					<li><a href="#">BLOG</a></li>
+					<li><a href="#">CALENDAR</a></li>
+					<li><a href="#">CONTACT</a></li>
+					<li><a href="#">OTHER</a></li>
+				</ul>
+			</nav>
+		</div>			
 	</div>
-	<div class="banner" style="background-image: url(#)"></div>
+	<div class="banner">
+		<div class="mask"></div>
+	</div>
 	<main>
-		<div class="card">
-			<div class="text">
+		<div class="userCard">
+			<div class="textAndPicture clearfix">
 				<div class="picture">
-				<img src="#" alt="head portrait">
+				<img src="./img/avatar.jpg" alt="head portrait">
 				</div>
 				<div class="introduction">
-					<span class="welcome">HELLO</span>
-					<h1>I'm YaoPujian</h1>
+					<span class="welcome">HELLO
+						<span class="triangle"></span></span>
+					<h1>YaoPujian</h1>
 					<p>Web Front-end Development Engineer</p>
 					<hr>
 					<dl>
@@ -51,43 +65,95 @@
 				</div>
 			</div>
 			<footer class="media">
-				<a href="#"><img src="#" alt="..."></a>
-				<a href="#"><img src="#" alt="..."></a>
-				<a href="#"><img src="#" alt="..."></a>
-				<a href="#"><img src="#" alt="..."></a>
-				<a href="#"><img src="#" alt="..."></a>
-				<a href="#"><img src="#" alt="..."></a>
+				<a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter"></use></svg></a>
+				<a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weixin"></use></svg></a>
+				<a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github"></use></svg></a>
+				<a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weibo"></use></svg></a>
+				<a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-jianshu"></use></svg></a>
+				<a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu"></use></svg></a>
 			</footer>
 		</div>
-		<a href="#" class="button">DOWNLOAD RESUME</a>
-		<p>
+		<div class="downloadResume-wrapper">
+			<a href="#" class="downloadResume" target="_blank" download>DOWNLOAD RESUME</a>
+		<div>
+		<p class="selfIntroduction">
 			Hello! I’m yaopujian. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
 		</p>
 	</main>
-	<section>
+	<section class="skills">
 		<h2>Professional Skill</h2>
-		<ol>
-			<li>HTML 5 &amp; CSS 3</li>
-			<li>JavaScript</li>
-			<li>jQuery</li>
-			<li>Vue</li>
-			<li>React</li>
-			<li>HTTP</li>
+		<ol class="clearfix">
+			<li>
+				<h3>HTML 5 &amp; CSS 3</h3>
+				<div class="progressBar">
+					<div class="progress"></div>
+				</div>
+			</li>
+			<li>
+				<h3>JavaScript</h3>
+				<div class="progressBar">
+					<div class="progress"></div>
+				</div>
+			</li>
+			<li>
+				<h3>jQuery</h3>
+				<div class="progressBar">
+					<div class="progress"></div>
+				</div>
+			</li>
+			<li>
+				<h3>Vue</h3>
+				<div class="progressBar">
+					<div class="progress"></div>
+				</div>
+			</li>
+			<li>
+				<h3>React</h3>
+				<div class="progressBar">
+					<div class="progress"></div>
+				</div>
+			</li>
+			<li>
+				<h3>HTTP</h3>
+				<div class="progressBar">
+					<div class="progress"></div>
+				</div>
+			</li>
 		</ol>
 	</section>
-	<section>
+	<section class="portfolio">
 		<h2>Portfolio</h2>
 		<nav>
-			<ol>
-				<li>ALL</li>
-				<li>Frame</li>
-				<li>JS&amp;CSS</li>
+			<ol class="clearfix">
+				<li id="portfolio1">ALL</li>
+				<li id="portfolio2">Frame</li>
+				<li id="portfolio3">JS&amp;CSS</li>
 			</ol>
+			<div id="portfolioBar" class="bar state-1">
+				<div class="bar-innner"></div>
+			</div>
 		</nav>
-		<div class="portfolio">
-			<div class="big"></div>
-			<div class="small"></div>
-			<div class="small"></div>
+		<script>
+			portfolio1.onclick=function(){
+				portfolioBar.className = "bar state-1"
+			}
+			portfolio2.onclick=function(){
+				portfolioBar.className = "bar state-2"
+			}
+			portfolio3.onclick=function(){
+				portfolioBar.className = "bar state-3"
+			}
+		</script>
+		<div class="works">
+			<div class="big">
+				<img src="./img/1.jpg" alt="production1">
+			</div>
+			<div class="small1">
+				<img src="./img/2.jpg" alt="production2">
+			</div>
+			<div class="small2">
+				<img src="./img/3.jpg" alt="production3">
+			</div>
 		</div>
 	</section>
 </body>
