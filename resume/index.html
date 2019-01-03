@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>My Resuem</title>
-	<link rel="stylesheet" href="./resume.css">
+	<link rel="stylesheet" href="./loading.css">
+	<link rel="stylesheet" href="./main.css">
 	<script src="http://at.alicdn.com/t/font_981187_eg70ikkyk6p.js"></script>
 	<style type="text/css">
     .icon {
@@ -15,6 +16,9 @@
 </style>
 </head>
 <body>
+	<div id = "siteWelcome" class="site-welcome active">
+		<div class="loading"></div>
+	</div>
 	<div class="topNavBar">
 		<div class="topNavBar-inner clearfix">
 			<a href="#" class="logo">
@@ -135,7 +139,7 @@
 		</nav>
 		<script>
 			portfolio1.onclick=function(){
-				portfolioBar.className = "bar state-1"
+				portfolioBar.clsassName = "bar state-1"
 			}
 			portfolio2.onclick=function(){
 				portfolioBar.className = "bar state-2"
@@ -156,5 +160,8 @@
 			</div>
 		</div>
 	</section>
+	<script>
+		siteWelcome.classList.remove('active')
+	</script>
 </body>
 </html>
