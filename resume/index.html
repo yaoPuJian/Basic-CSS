@@ -71,7 +71,7 @@
 		<div class="mask"></div>
 	</div>
 	<main>
-		<div id="siteAbout" class="userCard">
+		<div data-x id="siteAbout" class="userCard">
 			<div class="textAndPicture clearfix">
 				<div class="picture">
 				<img src="./img/avatar.jpg" alt="head portrait">
@@ -112,7 +112,7 @@
 			Hello! I’m yaopujian. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
 		</p>
 	</main>
-	<section id="siteSkills" class="skills">
+	<section data-x id="siteSkills" class="skills">
 		<h2>Professional Skill</h2>
 		<ol class="clearfix">
 			<li>
@@ -153,7 +153,7 @@
 			</li>
 		</ol>
 	</section>
-	<section id="sitePortfolio" class="portfolio">
+	<section data-x id="sitePortfolio" class="portfolio">
 		<h2>Portfolio</h2>
 		<nav>
 			<ol class="clearfix">
@@ -190,9 +190,19 @@
 	</section>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 	<script>
+		// loading动画
 		setTimeout(function(){
 			siteWelcome.classList.remove('active')
-		}, 2000)
+		}, 1000)
+
+		let specialTags = document.querySelectorAll('[data-x]')
+		for(let i = 0; i < specialTags.length; i++) {
+			specialTags[i].classList.add('offset')
+		}
+		// 为了userCard刚打开网页就有个动画，所以要在loading之后马上运行一下yyy()函数，但setTimeout的时间不能小于loading的1000ms，不然会被loading遮盖住。
+		setTimeout(function(){
+			findClosestElement()
+		}, 1000)
 
 		window.onscroll = function(xxx){
 			if(window.scrollY > 0) {
@@ -200,7 +210,29 @@
 			}else{
 				topNavBar.classList.remove('sticky')
 			}
+			findClosestElement()
 		}
+
+		function findClosestElement(){
+			let specialTags = document.querySelectorAll('[data-x]')
+			let minIndex = 0
+			for(let i = 0; i < specialTags.length; i++) {
+				if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+					minIndex = i
+				}
+			}
+			// minIndex 就是离窗口顶部最近的元素
+			specialTags[minIndex].classList.remove('offset')
+			let id = specialTags[minIndex].id
+			let a = document.querySelector('a[href="#' + id + '"]') //'a[href="#siteAbout"]'
+			let li = a.parentNode
+			let brothersAndMe = li.parentNode.children
+			for(let i = 0; i < brothersAndMe.length; i++){
+				brothersAndMe[i].classList.remove('highlight')
+			}
+			li.classList.add('highlight')
+	    }
+
 		let liTags = document.querySelectorAll('nav.menu > ul > li')
 		for(let i = 0; i < liTags.length; i++) {
 			liTags[i].onmouseenter = function(x) {
@@ -225,7 +257,6 @@
 				let href = a.getAttribute('href')//'#siteAbout'
 				let element = document.querySelector(href)
 				let top = element.offsetTop
-
 				// let n = 25 //一共动多少次
 				// let duration = 500 / n //共500ms，则每动一次多少时间
 				// let currentTop = window.scrollY
