@@ -19,22 +19,50 @@
 	<div id = "siteWelcome" class="site-welcome active">
 		<div class="loading"></div>
 	</div>
-	<div class="topNavBar">
+	<div id="topNavBar" class="topNavBar">
 		<div class="topNavBar-inner clearfix">
 			<a href="#" class="logo">
 			<span class="rs">RS</span><span class="card">card</span>
 			</a>
-			<nav>
+			<nav class="menu">
 				<ul class="clearfix">
-					<li><a href="#">ABOUT</a></li>
-					<li><a href="#">SKILL</a></li>
-					<li><a href="#">PORTFOLIO</a></li>
-					<li><a href="#">EXPERIENCE</a></li>
-					<li><a href="#">PRICING</a></li>
-					<li><a href="#">BLOG</a></li>
-					<li><a href="#">CALENDAR</a></li>
-					<li><a href="#">CONTACT</a></li>
-					<li><a href="#">OTHER</a></li>
+					<li>
+						<a href="#siteAbout">ABOUT</a>
+					</li>
+					<li>
+						<a href="#siteSkills">SKILLS</a>
+					</li>
+					<li class="menuTrigger">
+						<a href="#sitePortfolio">PORTFOLIO</a>
+						<ul class="submenu">
+							<li>PORTFOLIO1</li>
+							<li>PORTFOLIO2</li>
+							<li>PORTFOLIO3</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">EXPERIENCE</a>
+					</li>
+					<li>
+						<a href="#">PRICING</a>
+					</li>
+					<li class="menuTrigger">
+						<a href="#">BLOG</a>
+						<ul class="submenu">
+							<li>BLOG1</li>
+							<li>BLOG2</li>
+							<li>BLOG3</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">CALENDAR</a>
+					</li>
+					<li>
+						<a href="#">CONTACT</a>
+					</li>
+					<li>
+						<a href="#">OTHER</a>
+					</li>
 				</ul>
 			</nav>
 		</div>			
@@ -43,7 +71,7 @@
 		<div class="mask"></div>
 	</div>
 	<main>
-		<div class="userCard">
+		<div id="siteAbout" class="userCard">
 			<div class="textAndPicture clearfix">
 				<div class="picture">
 				<img src="./img/avatar.jpg" alt="head portrait">
@@ -84,7 +112,7 @@
 			Hello! I’m yaopujian. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
 		</p>
 	</main>
-	<section class="skills">
+	<section id="siteSkills" class="skills">
 		<h2>Professional Skill</h2>
 		<ol class="clearfix">
 			<li>
@@ -125,7 +153,7 @@
 			</li>
 		</ol>
 	</section>
-	<section class="portfolio">
+	<section id="sitePortfolio" class="portfolio">
 		<h2>Portfolio</h2>
 		<nav>
 			<ol class="clearfix">
@@ -160,8 +188,74 @@
 			</div>
 		</div>
 	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 	<script>
-		siteWelcome.classList.remove('active')
+		setTimeout(function(){
+			siteWelcome.classList.remove('active')
+		}, 2000)
+
+		window.onscroll = function(xxx){
+			if(window.scrollY > 0) {
+				topNavBar.classList.add('sticky')
+			}else{
+				topNavBar.classList.remove('sticky')
+			}
+		}
+		let liTags = document.querySelectorAll('nav.menu > ul > li')
+		for(let i = 0; i < liTags.length; i++) {
+			liTags[i].onmouseenter = function(x) {
+				x.currentTarget.classList.add('active')
+			}
+			liTags[i].onmouseleave = function(x) {
+				x.currentTarget.classList.remove('active')
+			}
+		}
+		let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+
+		function animate(time) {
+		    requestAnimationFrame(animate);
+		    TWEEN.update(time);
+		}
+		requestAnimationFrame(animate);
+
+		for(let i = 0; i < aTags.length; i ++) {
+			aTags[i].onclick = function(x) {
+				x.preventDefault()
+				let a = x.currentTarget
+				let href = a.getAttribute('href')//'#siteAbout'
+				let element = document.querySelector(href)
+				let top = element.offsetTop
+
+				// let n = 25 //一共动多少次
+				// let duration = 500 / n //共500ms，则每动一次多少时间
+				// let currentTop = window.scrollY
+				// let targetTop = top - 90
+				// let distance = (targetTop - currentTop) / n
+				// let i = 0
+				// let id = setInterval(()=>{
+				// 	if(i===n){
+				// 		window.clearInterval(id)
+				// 		return
+				// 	}
+				// 	i = i + 1
+				// 	window.scrollTo(0, currentTop + distance * i)
+				// }, duration)
+				// window.scrollTo(0, top - 90)
+				let currentTop = window.scrollY
+				let targetTop = top - 90
+				let s = targetTop - currentTop
+				var coords = {y: currentTop }; 
+				var t = Math.abs((s / 100)) * 100
+				if(t > 500){ t = 500 }
+				var tween = new TWEEN.Tween(coords)
+			        .to({y: targetTop}, t) 
+			        .easing(TWEEN.Easing.Quadratic.InOut) 
+			        .onUpdate(function() { 
+			           window.scrollTo(0, coords.y) 
+			        })
+			        .start();
+			}
+		}
 	</script>
 </body>
 </html>
